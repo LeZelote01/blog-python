@@ -1,0 +1,18 @@
+<!-- templates/resources.html -->
+{% extends 'base.html' %}
+
+{% block title %}Ressources{% endblock %}
+
+{% block content %}
+<section class="container py-5">
+    <h1>Ressources</h1>
+    <p>Boostez votre productivité avec ces outils et scripts Python :</p>
+    <ul>
+        <li><a href="https://automatetheboringstuff.com">Automate the Boring Stuff (livre gratuit)</a></li>
+        <li><a href="https://github.com/votre-compte/script-renommage">Script gratuit : Renommage de fichiers</a></li>
+        <li><a href="https://www.python.org">Site officiel de Python</a></li>
+        <li><a href="https://pandas.pydata.org">Documentation pandas</a></li>
+    </ul>
+    <p>Besoin d’un script spécifique ? <a href="{{ url_for('services') }}">Voir mes services.</a></p>
+</section>
+{% endblock %}

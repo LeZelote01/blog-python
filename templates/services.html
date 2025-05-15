@@ -1,0 +1,18 @@
+<!-- templates/services.html -->
+{% extends 'base.html' %}
+
+{% block title %}Services{% endblock %}
+
+{% block content %}
+<section class="container py-5">
+    <h1>Mes Services</h1>
+    <p>Solutions d’automatisation Python adaptées à vos besoins :</p>
+    <ul>
+        <li>Scripts sur mesure (à partir de 10€ via Ko-fi).</li>
+        <li>Formations Python personnalisées (en ligne).</li>
+        <li>Consulting pour optimiser vos processus.</li>
+    </ul>
+    <a href="{{ url_for('contact') }}" class="btn btn-primary">Contactez-moi</a>
+    <p>Paiements via <a href="https://ko-fi.com/lezelote">Ko-fi</a> ou <a href="https://paypal.me/lezelote">PayPal</a>.</p>
+</section>
+{% endblock %}

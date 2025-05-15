@@ -1,0 +1,15 @@
+<!-- templates/article.html -->
+{% extends 'base.html' %}
+
+{% block title %}{{ article[0] }}{% endblock %}
+
+{% block content %}
+<section class="container py-5">
+    <article>
+        <h1>{{ article[0] }}</h1>
+        <p>Publié le {{ article[2] }}</p>
+        <div>{{ article[1] | safe }}</div>
+        <a href="https://ko-fi.com/lezelote" class="btn btn-primary mt-3">Obtenir le script complet</a>
+    </article>
+</section>
+{% endblock %}

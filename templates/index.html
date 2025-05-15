@@ -1,0 +1,23 @@
+<!-- templates/index.html -->
+{% extends 'base.html' %}
+
+{% block title %}Accueil - Automatisation Python{% endblock %}
+
+{% block content %}
+<header class="py-5 text-center bg-light">
+    <h1>Blog sur l’Automatisation avec Python</h1>
+    <p>Simplifiez vos tâches quotidiennes avec des scripts Python.</p>
+</header>
+
+<section class="container py-5">
+    <h2>Articles Récents</h2>
+    {% for article in articles %}
+    <div class="card mb-3">
+        <div class="card-body">
+            <h3><a href="{{ url_for('article', id=article[0]) }}">{{ article[1] }}</a></h3>
+            <p>Publié le {{ article[2] }}</p>
+        </div>
+    </div>
+    {% endfor %}
+</section>
+{% endblock %}
