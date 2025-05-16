@@ -5,9 +5,14 @@
 
 {% block content %}
 <section class="container py-5">
-    <h1>À propos</h1>
-    <p>Je suis un développeur Python passionné par l’automatisation. Ma mission est de rendre la productivité accessible aux entreprises et particuliers grâce à des scripts Python.</p>
-    <p>Compétences : Python, pandas, Selenium, automatisation de rapports, scraping web.</p>
-    <a href="{{ url_for('contact') }}" class="btn btn-primary">Contactez-moi</a>
+    <div class="project-card text-center">
+        <h1 class="text-dark">À propos de Moi</h1>
+        <img src="{{ url_for('static', filename='image/image-1.jpg') }}" alt="Votre Photo" class="rounded-circle mb-3" style="max-width: 150px;">
+        <p class="text-muted">Je suis un développeur Python passionné par l’automatisation. Ma mission est de rendre la productivité accessible grâce à des scripts Python.</p>
+        <p>Compétences : Python, Flask, Selenium, automatisation.</p>
+        <span class="badge bg-primary">Python</span>
+        <span class="badge bg-secondary">Flask</span>
+        <a href="{{ url_for('contact') }}" class="btn btn-primary">Read More</a>
+    </div>
 </section>
 {% endblock %}

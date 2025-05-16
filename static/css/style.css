@@ -1,26 +1,181 @@
 /* static/css/style.css */
 body {
-    line-height: 1.6;
+    font-family: 'Montserrat', sans-serif;
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    overflow-x: hidden;
+    background: linear-gradient(135deg, #1E90FF, #8A2BE2, #FFA500);
+    background-size: 400% 400%;
+    animation: gradientBG 15s ease infinite;
 }
 
-.card {
+@keyframes gradientBG {
+    0% { background-position: 0% 0%; }
+    50% { background-position: 100% 100%; }
+    100% { background-position: 0% 0%; }
+}
+
+/* Fond abstrait avec formes */
+.background-shapes {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: -1;
+}
+
+.shape {
+    position: absolute;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+}
+
+.shape-1 { width: 200px; height: 200px; top: 10%; left: 10%; }
+.shape-2 { width: 150px; height: 150px; top: 30%; right: 10%; }
+.shape-3 { width: 100px; height: 100px; bottom: 20%; left: 20%; }
+
+/* Navigation */
+.navbar {
+    padding: 1rem 2rem;
+}
+
+.navbar-brand, .nav-link {
+    font-weight: 700;
+    transition: color 0.3s;
+}
+
+.navbar-logo {
+    height: 60px; /* Ajustez cette valeur pour agrandir le logo */
+    width: auto; /* Garde les proportions */
+    max-height: 80px; /* Limite la hauteur maximale */
+    max-width: 150px; /* Limite la largeur maximale */
+    object-fit: contain; /* Assure que l'image reste proportionnelle */
+    /*background: transparent;
+    opacity: 0.4;
+    transition: opacity 0.3s ease;*/
+}
+
+.nav-link:hover {
+    color: #FFA500 !important;
+}
+
+/* En-tête avec image d'arrière-plan */
+.header-section {
+    min-height: 400px; /* Hauteur ajustée pour un effet professionnel */
+    background-image: url('../static/image/header-bg.jpg'); /* Chemin relatif vers l'image */
+    background-size: cover; /* Image couvre toute la section */
+    background-position: center; /* Centre l'image */
+    background-repeat: no-repeat; /* Pas de répétition */
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.header-section .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.6)); /* Dégradé subtil */
+    z-index: 0;
+}
+
+.header-section .header-content {
+    position: relative;
+    z-index: 1;
+    padding: 50px 20px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Ombre pour lisibilité */
+}
+
+.header-section h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+.header-section .lead {
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+/* Effet de parallax (optionnel) */
+@media (min-width: 768px) {
+    .header-section {
+        background-attachment: fixed; /* Parallax */
+        background-position: center 80%; /* Ajuste la position verticale */
+    }
+}
+
+
+.project-card {
+    flex-grow: 1; /* Permet aux cartes de s’étirer */
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 15px;
+    padding: 20px;
+    margin: 5px 0;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s;
+    height: 100%;
 }
 
-.card:hover {
-    transform: scale(1.02);
+.project-card:hover {
+    transform: scale(1.05);
 }
 
-article {
-    max-width: 800px;
-    margin: 0 auto;
+.row > [class*="col-"] {
+    display: flex;
+    flex-direction: column;
 }
 
-.btn-primary {
-    background-color: #007bff;
+/* Assure que les cartes occupent toute la hauteur de la colonne */
+.col {
+    display: flex;
+    flex-direction: column;
+    opacity: 0.9;
+    transform: translateY(20px);
+    transition: all 0.5s ease;
+}
+
+.col.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.project-card h3 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+
+.project-card .badge {
+    display: inline-block;
+    padding: 5px 10px;
+    margin: 5px;
+    border-radius: 10px;
+    font-size: 0.9rem;
+}
+
+.project-card .btn {
+    margin-top: 10px;
+    background-color: #1E90FF;
     border: none;
+    transition: background-color 0.3s;
 }
 
-.btn-primary:hover {
-    background-color: #0056b3;
+.project-card .btn:hover {
+    background-color: #FFA500;
+}
+
+/* Footer */
+footer {
+    position: relative;
+    z-index: 1;
+}
+
+@media (min-width: 1200px) {
+    .row-cols-lg-4 { --bs-gutter-x: 1.5rem; }
 }

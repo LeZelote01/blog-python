@@ -1,18 +1,57 @@
 <!-- templates/services.html -->
 {% extends 'base.html' %}
 
-{% block title %}Services{% endblock %}
+{% block title %}Blog{% endblock %}
 
 {% block content %}
 <section class="container py-5">
-    <h1>Mes Services</h1>
-    <p>Solutions d’automatisation Python adaptées à vos besoins :</p>
-    <ul>
-        <li>Scripts sur mesure (à partir de 10€ via Ko-fi).</li>
-        <li>Formations Python personnalisées (en ligne).</li>
-        <li>Consulting pour optimiser vos processus.</li>
-    </ul>
-    <a href="{{ url_for('contact') }}" class="btn btn-primary">Contactez-moi</a>
-    <p>Paiements via <a href="https://ko-fi.com/lezelote">Ko-fi</a> ou <a href="https://paypal.me/lezelote">PayPal</a>.</p>
+    <h1 class="text-white text-center mb-5">Mes Articles</h1>
+    <div class="row">
+        <!-- Section gauche : Liste des articles publiés -->
+        <div class="col-md-3">
+            <div class="project-card">
+                <h4 class="text-dark">Articles Publiés</h4>
+                <ul class="list-group">
+                    <li class="list-group-item"><a href="{{ url_for('article', id=1) }}">5 Scripts pour Automatiser Vos Tâches</a></li>
+                    <li class="list-group-item"><a href="{{ url_for('article', id=2) }}">Automatisation Excel avec Python</a></li>
+                    <li class="list-group-item"><a href="{{ url_for('article', id=3) }}">Web Scraping avec Selenium</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Section centrale : Cartes des articles -->
+        <div class="col-md-6">
+            <div class="row row-cols-1 g-4">
+                <div class="col">
+                    <div class="project-card">
+                        <h3><a href="{{ url_for('article', id=1) }}" class="text-dark">5 Scripts pour Automatiser Vos Tâches</a></h3>
+                        <p class="text-muted">Publié le 2025-05-15</p>
+                        <span class="badge bg-primary">Python</span>
+                        <a href="{{ url_for('article', id=1) }}" class="btn btn-primary">Demo</a>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="project-card">
+                        <h3><a href="{{ url_for('article', id=2) }}" class="text-dark">Automatisation Excel avec Python</a></h3>
+                        <p class="text-muted">Publié le 2025-05-16</p>
+                        <span class="badge bg-primary">Python</span>
+                        <a href="{{ url_for('article', id=2) }}" class="btn btn-primary">Demo</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Section droite : Liens ou publicités -->
+        <div class="col-md-3">
+            <div class="project-card">
+                <h4 class="text-dark">Liens Utiles</h4>
+                <ul class="list-group">
+                    <li class="list-group-item"><a href="https://www.python.org">Site Officiel Python</a></li>
+                    <li class="list-group-item"><a href="https://ko-fi.com/votre-compte">Soutenez-moi sur Ko-fi</a></li>
+                    <li class="list-group-item"><a href="https://github.com/LeZelote01">Mon GitHub</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
 </section>
 {% endblock %}

@@ -1,18 +1,48 @@
 <!-- templates/resources.html -->
 {% extends 'base.html' %}
 
-{% block title %}Ressources{% endblock %}
+{% block title %}Portfolio{% endblock %}
 
 {% block content %}
 <section class="container py-5">
-    <h1>Ressources</h1>
-    <p>Boostez votre productivité avec ces outils et scripts Python :</p>
-    <ul>
-        <li><a href="https://automatetheboringstuff.com">Automate the Boring Stuff (livre gratuit)</a></li>
-        <li><a href="https://github.com/votre-compte/script-renommage">Script gratuit : Renommage de fichiers</a></li>
-        <li><a href="https://www.python.org">Site officiel de Python</a></li>
-        <li><a href="https://pandas.pydata.org">Documentation pandas</a></li>
-    </ul>
-    <p>Besoin d’un script spécifique ? <a href="{{ url_for('services') }}">Voir mes services.</a></p>
+    <h1 class="text-white text-center mb-5">Mes Projets</h1>
+    <div class="row row-cols-1 row-cols-md-2 row-cols-lg-4 g-4">
+        <div class="col">
+            <div class="project-card">
+                <h3>Script de Renommage</h3>
+                <p class="text-muted">Automatise le renommage de fichiers.</p>
+                <span class="badge bg-primary">Python</span>
+                <a href="https://github.com/LeZelote01/scripts_gratuits/blob/main/rename_files.py" class="btn btn-primary">GitHub</a>
+            </div>
+        </div>
+        <div class="col">
+            <div class="project-card">
+                <h3>Automatisation Excel</h3>
+                <p class="text-muted">Génère des rapports avec pandas.</p>
+                <span class="badge bg-primary">Python</span>
+                <span class="badge bg-secondary">pandas</span>
+                <a href="{{ url_for('services') }}" class="btn btn-primary">Demo</a>
+            </div>
+        </div>
+        <!-- Ajoutez d'autres projets ici -->
+        <div class="col">
+            <div class="project-card">
+                <h3>Bot Web Scraping</h3>
+                <p class="text-muted">Extrais des données avec Selenium.</p>
+                <span class="badge bg-primary">Python</span>
+                <span class="badge bg-secondary">Selenium</span>
+                <a href="https://github.com/LeZelote01/scripts_gratuits/blob/main/rename_files.py" class="btn btn-primary">GitHub</a>
+            </div>
+        </div>
+        <div class="col">
+            <div class="project-card">
+                <h3>Gestion de Tâches</h3>
+                <p class="text-muted">Application simple avec Flask.</p>
+                <span class="badge bg-primary">Python</span>
+                <span class="badge bg-secondary">Flask</span>
+                <a href="{{ url_for('services') }}" class="btn btn-primary">Demo</a>
+            </div>
+        </div>
+    </div>
 </section>
 {% endblock %}

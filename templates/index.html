@@ -4,19 +4,24 @@
 {% block title %}Accueil - Automatisation Python{% endblock %}
 
 {% block content %}
-<header class="py-5 text-center bg-light">
-    <h1>Blog sur l’Automatisation avec Python</h1>
-    <p>Simplifiez vos tâches quotidiennes avec des scripts Python.</p>
-</header>
+<section class="header-section text-white text-center py-5">
+    <div class="overlay"></div>
+    <div class="header-content">
+        <h1 class="display-4">Bienvenue sur Mon Blog Python</h1>
+        <p class="lead">Découvrez des scripts pour automatiser vos tâches quotidiennes.</p>
+        <a href="{{ url_for('services') }}" class="btn btn-primary btn-lg mt-3">Voir les Articles</a>
+    </div>
+</section>
 
 <section class="container py-5">
-    <h2>Articles Récents</h2>
+    <h2 class="text-white text-center mb-4">Mes Derniers Projets</h2>
     {% for article in articles %}
-    <div class="card mb-3">
-        <div class="card-body">
-            <h3><a href="{{ url_for('article', id=article[0]) }}">{{ article[1] }}</a></h3>
-            <p>Publié le {{ article[2] }}</p>
-        </div>
+    <div class="project-card">
+        <h3><a href="{{ url_for('article', id=article[0]) }}" class="text-dark">{{ article[1] }}</a></h3>
+        <p class="text-muted">Publié le {{ article[2] }}</p>
+        <span class="badge bg-primary">Python</span>
+        <a href="{{ url_for('article', id=article[0]) }}" class="btn btn-primary">Demo</a>
+        <a href="https://github.com/LeZelote01/blog-python" class="btn btn-secondary">GitHub</a>
     </div>
     {% endfor %}
 </section>
